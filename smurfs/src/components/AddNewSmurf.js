@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { postData } from '../actions/actions';
 
 const AddNewSmurf = (props) => {
-	const [smurf, setNewSmurf] = useState({
+	const [smurf, setSmurf] = useState({
 		name: '',
 		age: '',
 		height: '',
@@ -11,7 +11,7 @@ const AddNewSmurf = (props) => {
 	});
 
 	const handleChange = (e) => {
-		setNewSmurf({ ...smurf, [e.target.name]: e.target.value });
+		setSmurf({ ...smurf, [e.target.name]: e.target.value });
 	};
 
 	const handleSubmit = (e) => {
@@ -19,7 +19,7 @@ const AddNewSmurf = (props) => {
 
 		props.postData(smurf);
 
-		setNewSmurf({
+		setSmurf({
 			name: '',
 			age: '',
 			height: '',
@@ -71,7 +71,7 @@ const AddNewSmurf = (props) => {
 
 const mapStateToProps = (state) => {
 	return {
-		is_posting: state.is_posting,
+		is_fetching: state.is_fetching,
 		smurfs: state.smurfs,
 		errors: state.error,
 	};

@@ -13,7 +13,7 @@ export const fetchData = () => (dispatch) => {
 	axios
 		.get('http://localhost:3333/smurfs')
 		.then((res) => {
-			console.log('pl: actions/actions.js: fetchData: axios.then: ', res.data);
+			console.log('pl: actions/index.js: fethData: axios.then: ', res.data);
 			dispatch({
 				type: FETCH_DATA_SUCCESS,
 				payload: res.data,
@@ -31,7 +31,7 @@ export const postData = (smurf) => (dispatch) => {
 	axios
 		.post('http://localhost:3333/smurfs', smurf)
 		.then((res) => {
-			console.log('pl: actions/actions.js: postData: axios.then: ', res.data);
+			console.log('pl: actions/index.js: postData: axios.then: ', res.data);
 			dispatch({
 				type: POST_DATA_SUCCESS,
 				payload: res.data,
